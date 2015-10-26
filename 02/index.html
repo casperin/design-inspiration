@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Break</title>
+        <meta name='viewport' content='width=device-width'>
+        <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'>
+        <link rel='stylesheet' href='../styles.css'>
+        <style>
+            span {
+                font-size: 10em;
+                position: relative;
+                white-space: pre;
+            }
+
+            span:before {
+                content: '';
+                background: white;
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 50%;
+                bottom: 0;
+                left: 0;
+            }
+
+            span:after {
+                content: attr(data-content);
+                color: black;
+                display: block;
+                position: absolute;
+                top: 10px;  /* Change this to increase/decrease skew */
+                left: 0;
+                right: 50%;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <span data-content='e'>e</span>
+        <br>
+        <span data-content='bob'>bob</span>
+    </body>
+</html>

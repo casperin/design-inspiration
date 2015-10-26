@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Columns</title>
+        <meta name='viewport' content='width=device-width'>
+        <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'>
+        <link rel='stylesheet' href='../styles.css'>
+        <style>
+            .container {
+                width: 800px; /* (3 * 320) - (2 * 100) + (2 * 20) */
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            p {
+                margin: 0;
+                text-align: justify;
+            }
+
+            .column {
+                width: 320px;
+                float: left;
+            }
+
+            .column.a:before {
+                content: '';
+                float: right;
+                width: 100px;
+                height: 450px;
+                shape-outside: polygon(0 0, 100px 450px, 100px 100px);
+            }
+
+            .column.b, .column.c {
+                margin-left: -80px;
+            }
+
+            .column.b:before {
+                content: '';
+                display: block;
+                float: left;
+                width: 100px;
+                height: 450px;
+                shape-outside: polygon(0 0, 100px 450px, 0 100px);
+            }
+
+            .column.b p:first-child:before {
+                content: '';
+                display: block;
+                float: right;
+                width: 100px;
+                height: 450px;
+                shape-outside: polygon(95px 0, 0 200px, 100px 450px, 100px 100px);
+            }
+
+            .column.c:before {
+                content: '';
+                display: block;
+                float: left;
+                width: 100px;
+                height: 450px;
+                shape-outside: polygon(100px 0, 0 200px, 100px 450px, 0 450px, 0 0);
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Uses css-shapes (chrome only as of writing)</h1>
+            <div class='column a'>
+                <p>Lorem ipsum dolor sit amet, consectetur etiam adipiscing elit. Nulla ut nibh
+                porta, tempus libero nec, lacinia dolor. Ut eleifend arcu et nibh sodales convallis.
+                Integer ac efficitur urna. Curabitur accumsan ex vitae ex hendrerit et auctor.
+                Aliquam pretium, sapien tellus lacinia elementum, eros at ante ornare neque, eu
+                feugiat urna ipsum ac augue. Praesent eget sollicitudin odio. Nulla quis sagittis
+                diam. Morbi rutrum dui justo. Maecenas at aliquet erat. Morbi arcu magna, ligula</p>
+            </div>
+            
+            <div class='column b'>
+                <p>pharetra et vitae, consequat pretium mi. Sed hendrerit sit amet velit fringilla
+                interdum. Pellentesque enim metus, consectetur ac neque a, finibus fringilla nunc.
+                Curabitur et facilisis pellentesque mattis tristique. Etiam felis sapien libero,
+                sodales sit amet pellentesque eu, tristique mattis ligula. Ut suscipit facus mauris
+                odio lobortis hendrerit, condiment est suscipit. Elementum et</p>
+            </div>
+
+            <div class='column c'>
+                <p>justo gravida. Nullam luctus erat vitae mi gravida iaculis.  Quisque volutpat
+                placerat tellus, in tincidunt orci pellentesque vulputate. Sed ac rhoncus justo.
+                Suspendisse ornare imperdiet quam. Vivamus diam nisl, sed rutrum ipsum imperdiet at.
+                Aenean odio nisl, pellentesque id, auctor vitae libero.  Lorem ipsum dolor sit amet,
+                vitae consectetur adipiscing elit. Sed ullamcorper quis, justo bibendum amet tempus
+                tempor, est velit semper turpis, nec placerat diam nibh quis quam.</p>
+            </div>
+        </div>
+    </html>

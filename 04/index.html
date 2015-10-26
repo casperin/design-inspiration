@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Quotation mark in the gutter</title>
+        <meta name='viewport' content='width=device-width'>
+        <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'>
+        <link rel='stylesheet' href='../styles.css'>
+        <style>
+            body {
+                font-size: 2em;
+            }
+
+            .container {
+                width: 30em;
+                margin: 0 auto;
+            }
+
+            .starts-with-quot {
+                text-indent: -.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'> <p>Placing quotation marks in the gutter when the sentence begins
+            with one. Look at the next couple of paragraphs. This is done automatically (see
+            source).</p>
+
+            <p>&ldquo;Aliquam erat volutpat. Proin felis felis, interdum sit amet leo sed, efficitur
+            posuere orci.&rdquo; Aenean sed mi venenatis, consectetur lectus et, laoreet lectus.
+            Vestibulum vulputate libero eget ipsum maximus, quis aliquet lectus ullamcorper. Aliquam
+            erat volutpat. Morbi mauris ex, aliquam vitae feugiat congue, dignissim id nunc.</p>
+
+            <p>In lobortis neque nec dolor tincidunt, ut pellentesque leo faucibus. Maecenas maximus
+            semper massa vitae commodo. Praesent sit amet nisl magna.<p>
+
+            <p>&ldquo;Cras vitae dictum risus, et mollis leo. Maecenas pretium turpis et efficitur
+            feugiat. Aenean quis massa faucibus, bibendum quam ac, elementum lacus.&rdquo;</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae tempus nunc.
+            Phasellus laoreet lacus sed leo blandit, non pretium tellus laoreet. Morbi maximus
+            turpis vitae dui auctor, ac mollis ligula volutpat.</p> </div>
+
+        <script>
+            [].forEach.call(document.getElementsByTagName('p'), function (p) {
+                if (/^(“|")/.test(p.innerHTML))
+                    p.classList.add('starts-with-quot');
+            });
+        </script>
+    </body>
+</html>
