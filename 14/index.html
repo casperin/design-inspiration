@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Floating text</title>
+        <meta name='viewport' content='width=device-width'>
+        <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'>
+        <link rel='stylesheet' href='../styles.css'>
+        <style>
+            .container {
+                width: 600px;
+                height: 400px;
+                margin: 100px auto;
+                outline: 1px solid black;
+                position: relative;
+            }
+
+            .container > div {
+                position: absolute;
+                width: 275px;
+                border-left: 25px solid #aaa;
+                top: 0;
+                bottom: 0;
+            }
+
+            span {
+                transition: .2s;
+            }
+
+            span.rotated {
+                transform: rotate(90deg);
+            }
+
+            .a {
+                left: 0;
+                background: limegreen;
+            }
+
+            .b {
+                right: 0;
+                background: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='a'>
+                <span>Something</span>
+            </div>
+            <div class='b'>
+                <span>Other</span>
+            </div>
+        </div>
+        <input type='range' />
+
+        <script>
+            var input = document.querySelector('input'),
+                a = document.querySelector('.a'),
+                b = document.querySelector('.b'),
+                spanA = document.querySelector('.a span'),
+                a = document.querySelector('.a');
+
+            input.addEventListener('input', function (event) {
+                var value = event.target.value;
+
+                a.style.width = value * 6 + 'px';
+                b.style.width = 600 - (value * 6) + 'px';
+
+                console.log(value);
+
+                if (value < 25) {
+                    spanA.classList.add('rotated');
+                }
+            });
+        </script>
+    </body>
+</html>
+

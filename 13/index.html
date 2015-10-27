@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Floating text</title>
+        <meta name='viewport' content='width=device-width'>
+        <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'>
+        <link rel='stylesheet' href='../styles.css'>
+        <style>
+            .container {
+                width: 900px;
+                margin: 100px auto;
+                text-align: justify;
+                line-height: 25px;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            .col {
+                width: 440px;
+                float: left;
+                padding: 5px;
+            }
+
+            .col:before {
+                content: '';
+                width: 50px;
+                height: 395px;
+                display: block;
+                shape-outside: polygon(50px 150px, -50px 150px, -50px 250px, 50px 250px);
+            }
+
+            .col.left:before {
+                float: right;
+            }
+
+            .col.right:before {
+                float: left;
+            }
+
+            .extra {
+                font-style: italic;
+                background: #ffc;
+                width: 78px;
+                height: 78px;
+                padding: 10px;
+                border: 1px solid black;
+                position: absolute;
+                left: 50%;
+                margin-left: -50px;
+                top: 255px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <p class='extra'> Donec ac vulputate metus.</p>
+
+            <p class='col left'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar mattis tortor
+            et rhoncus.  Mauris a tristique mauris. Donec pellentesque, odio vitae vehicula congue, mi
+            elit interdum metus, ut aliquam nibh libero cursus mauris. Phasellus vehicula, massa et
+            condimentum faucibus, lectus elit sodales elit, a sollicitudin lorem ex eu mi. Donec vel
+            eleifend risus, eu cursus sapien. Class aptent taciti sociosqu ad litora torquent per
+            conubia nostra, per inceptos himenaeos. Pellentesque luctus varius justo. Ut nec feugiat
+            justo. Morbi ultricies, ipsum vitae dignissim pharetra, est orci semper ligula, vitae
+            sodales ipsum erat at est. Praesent vitae commodo mi. Duis in porta sapien. Nam sed enim ac
+            tellus porta sodales nec id eros. Morbi congue vel ligula.  </p>
+
+            <p class='col right'> Quisque vitae placerat urna, eu vestibulum sem. Nulla finibus semper nisl vel
+            vestibulum. Donec commodo volutpat sem sed ullamcorper. Nam ut sapien metus. Praesent
+            ultrices dolor nec nisl malesuada finibus. Donec imperdiet leo vel lectus cursus finibus.
+            Mauris a enim at lorem varius tempus nec varius justo. Cras vestibulum sem vitae arcu porta
+            aliquet. Duis eget augue rutrum massa auctor egestas nec vitae urna. Nunc ultrices
+            consectetur interdum. Mauris vehicula leo in faucibus consequat. Nulla euismod condimentum
+            sollicitudin. Ut porttitor nunc vel dui congue facilisis. Cum sociis natoque penatibus et
+            magnis dis parturient montes, nascetur ridiculus mus. Proin sed turpis at nulla condimentum
+            tempor in at sem.  </p>
+
+        </div>
+    </body>
+</html>
+
