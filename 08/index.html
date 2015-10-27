@@ -15,9 +15,7 @@
 
             span:after {
                 content: '';
-                background:
-                url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQIW2NkYGBg+P///38QDQKMyBwUAUZGRrAkhgoAvKwT9VYXn50AAAAASUVORK5CYII=)
-                repeat;
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQIW2NkYGBg+P///38QDQKMyBwUAUZGRrAkhgoAvKwT9VYXn50AAAAASUVORK5CYII=) repeat;
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -25,10 +23,17 @@
                 left: 0;
             }
 
+            .stripes {
+                color: magenta;
+            }
+            .stripes:after {
+                background-image: url(bg.png);
+            }
         </style>
     </head>
     <body>
         <span>34</span>
+        <span class='stripes'>35</span>
     </body>
 </html>
 
