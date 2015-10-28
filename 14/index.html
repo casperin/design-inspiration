@@ -25,15 +25,19 @@
 
             span {
                 transition: .2s;
+                transform-origin: 0 0;
+                display: inline-block;
             }
 
             span.rotated {
-                transform: rotate(90deg);
+                transform: rotate(90deg) translate(5px, 0) scale(.8);
             }
 
             .a {
                 left: 0;
                 background: limegreen;
+                border-right: 1px solid black;
+                z-index: 1;
             }
 
             .b {
@@ -51,26 +55,26 @@
                 <span>Other</span>
             </div>
         </div>
-        <input type='range' />
 
         <script>
-            var input = document.querySelector('input'),
+            var container = document.querySelector('.container'),
+                containerLeft = container.getBoundingClientRect().left,
                 a = document.querySelector('.a'),
                 b = document.querySelector('.b'),
                 spanA = document.querySelector('.a span'),
-                a = document.querySelector('.a');
+                spanB = document.querySelector('.b span');
 
-            input.addEventListener('input', function (event) {
-                var value = event.target.value;
+            container.addEventListener('mousemove', function (event) {
+                var x = event.clientX - containerLeft;
 
-                a.style.width = value * 6 + 'px';
-                b.style.width = 600 - (value * 6) + 'px';
+                x = Math.max(x, 50);    // lower bound
+                x = Math.min(x, 600);   // upper bound
 
-                console.log(value);
+                a.style.width = (x - 50) + 'px';
+                b.style.width = (600 - x) + 'px';
 
-                if (value < 25) {
-                    spanA.classList.add('rotated');
-                }
+                spanA.classList.toggle('rotated', x < 150);
+                spanB.classList.toggle('rotated', x > 540);
             });
         </script>
     </body>
